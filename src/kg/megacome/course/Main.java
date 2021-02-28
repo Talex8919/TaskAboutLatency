@@ -1,5 +1,7 @@
 package kg.megacome.course;
 
+import com.sun.jmx.remote.internal.ArrayQueue;
+
 import java.sql.SQLOutput;
 import java.util.*;
 
@@ -17,7 +19,7 @@ public class Main {
         long PointA=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(2001+1)+1;
             acerBrandsLinK.add(2_000_000, new Integer(bb));
         }
         System.out.println("Added 2_000_000 into LinkedList  and Latency is " + (System.currentTimeMillis()-PointA)+"ms");
@@ -33,7 +35,7 @@ public class Main {
         long PointB=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(1501+1)+1;
             asusBrandsLink.add(2_000_000, new Integer(bb));
         }
         System.out.println("Added 2_000_000 into ArrayList  and Latency is " + (System.currentTimeMillis()-PointB)+"ms");
@@ -49,7 +51,7 @@ public class Main {
         long PointC=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(3501+1)+1;
             acerBrandsLinK.add(7_000_000, new Integer(bb));
         }
         System.out.println("Added 7_000_000 into LinkedList  and Latency is " + (System.currentTimeMillis()-PointC)+"ms");
@@ -65,7 +67,7 @@ public class Main {
         long PointD=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(4501+1)+1;
             asusBrandsLink.add(7_000_000, new Integer(bb));
         }
         System.out.println("Added 7_000_000 into ArrayList  and Latency is " + (System.currentTimeMillis()-PointD)+"ms");
@@ -80,7 +82,7 @@ public class Main {
         long PointCD=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(7501+1)+1;
             acerBrandsLinK.add(9_000_000, new Integer(bb));
         }
         System.out.println("Added 9_000_000 into LinkedList  and Latency is " + (System.currentTimeMillis()-PointCD)+"ms");
@@ -96,10 +98,10 @@ public class Main {
         long PointDC=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(5501+1)+1;
             asusBrandsLink.add(9_000_000, new Integer(bb));
         }
-        System.out.println("Added 9_000_000 into ArrayList  and Latency is " + (System.currentTimeMillis()-PointDC)+"ms");
+        System.out.println("Added 9_000_000 into ArrayList  and Latency is " + (System.currentTimeMillis()-PointDC)+" ms");
         System.out.println("________________Fourth Assessment");
         List<Integer> cardsForTricks = new ArrayList<>();
 
@@ -111,10 +113,10 @@ public class Main {
         long PointDCE=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(3651+1)+1;
             asusBrandsLink.add(11_000_000, new Integer(bb));
         }
-        System.out.println("Added 11_000_000 into ArrayList  and Latency is " + (System.currentTimeMillis()-PointDCE)+"ms");
+        System.out.println("Added 11_mil into ArrayList  and Latency is " + (System.currentTimeMillis()-PointDCE)+"ms");
 
         List<Integer> asusBrand = new LinkedList<>();
 
@@ -126,44 +128,89 @@ public class Main {
         long PointCDF=System.currentTimeMillis();
 
         for(int i=0;i<100;i++){
-            int bb= (int)Math.random()*(1000+1)+1;
+            int bb= (int)Math.random()*(4151+1)+1;
             acerBrandsLinK.add(11_000_000, new Integer(bb));
         }
         System.out.println("Added 11_000_000 into LinkedList  and Latency is " + (System.currentTimeMillis()-PointCDF)+"ms");
         System.out.println();
-        System.out.println("altering acerBrandsLinK (11 millions) which has random input integers into static Int MAX and MIN Value    ");
-        long regress= System.currentTimeMillis();
-        Collections.sort(acerBrandsLinK);
-        Collections.fill(acerBrandsLinK,Integer.MIN_VALUE );
-        System.out.println("Altering tables in LinkedList and fill int-Min Value, Latency is " + (System.currentTimeMillis()-regress)+"ms");
 
+
+        List <Integer> smpartphones = new LinkedList<>();
+        for (int i =0 ; i< 10_000_000; i++){
+            smpartphones.add(new Integer(i));
+        }
+        long regress= System.currentTimeMillis();
+        for (int i =0; i<100;i++){
+            int bbds=(int)Math.random()*(1591 +1)+1;
+            smpartphones.add(10_000_000, new Integer(bbds));
+        }
+        Collections.sort(smpartphones);
+        Collections.fill(smpartphones,Integer.MIN_VALUE );
+        System.out.println("Create LinkedList 50 mil than full fill them randomely , sort,fill all :integer.MIN_VALUE: Latency is " + (System.currentTimeMillis()-regress)+"ms");
+
+
+        List <Integer> nokiaPhones = new ArrayList<>();
+        for (int i =0 ; i< 50_000_000; i++){
+            nokiaPhones.add(new Integer(i));
+        }
         long  pushingUp= System.currentTimeMillis();
-        Collections.sort(asusBrand);
-Collections.fill(asusBrand, Integer.MAX_VALUE*150);
-        System.out.println("Altering tables in ArrayList and fill them Int-Max.val, Latency is " + (System.currentTimeMillis()-pushingUp)+"ms");
+        for (int i =0; i<100;i++){
+            int bbds=(int)Math.random()*(4581 +1)+1;
+            nokiaPhones.add(50_000_000,new Integer(bbds) );
+        }
+        Collections.sort(nokiaPhones);
+Collections.fill(nokiaPhones, Integer.MAX_VALUE*150);
+        System.out.println("Create ArrayList 50 mil than fill them randomly , sort,fill,  all :Integer.numberOfTrailingZeros(1500)) and shuffle : Latency is  " + (System.currentTimeMillis()-pushingUp)+"ms");
         System.out.println();
         System.out.println("Next Operation ");
-        long eperiment= System.currentTimeMillis();
-        Collections.sort (pokerCardArList);
-        Collections.fill(pokerCardArList,Integer.numberOfTrailingZeros(1500));
-        Collections.shuffle(pokerCardArList);
-        System.out.println("Do sorting  the  9_000_000 PokerCardArrayList  then fill it   by int.numberOfTrailingZeros and shuffle again"+ (System.currentTimeMillis()-eperiment)+"ms");
 
+        List<Integer> sumsungMobile= new ArrayList<>();
+        for(int i = 0 ; i < 35_000_000;i++){
+            sumsungMobile.add(new Integer(i));
+        }
+        long eperiment= System.currentTimeMillis();
+        for (int i=0; i< 100;i++){
+            int bbds=(int)Math.random()*(3611 +1)+1;
+sumsungMobile.add(35_000_000,  new Integer(bbds));
+        }
+        Collections.sort (sumsungMobile);
+        Collections.fill(sumsungMobile, Integer.numberOfTrailingZeros(1500));
+        Collections.shuffle(sumsungMobile);
+        System.out.println(" creating arraylist and fii sumsungMobile  then fill it   by int.numberOfTrailingZeros and shuffle again "+ (System.currentTimeMillis()-eperiment)+" ms");
+
+
+
+        List<Integer>philipsStationary= new LinkedList<>();
+        for (int i =0; i< 75_000_000; i++){
+            philipsStationary.add(new Integer(i));
+        }
 long unusual= System.currentTimeMillis();
-Collections.sort(traditionalCard);
-        Collections.rotate(traditionalCard,50);
-        int bb= (int)Math.random()*(9852+1)+1;
-Collections.fill(traditionalCard,bb);
-        System.out.println("Do sorting  the  9_000_000 traditionalCard LinkList  then fill it   by random numbers ); then rotate them again" + (System.currentTimeMillis()-unusual)+"ms" );
+        for (int i=0;i<100;i++){
+            int bbds=(int)Math.random()*(7501 +1)+1;
+            philipsStationary.add(75_000_000, new Integer(bbds));
+        }
+Collections.sort(philipsStationary);
+        Collections.rotate(philipsStationary,50);
+
+Collections.fill(traditionalCard,Integer.MAX_VALUE/10*100);
+        System.out.println("Create Linked list of 75mil then fill them randomly of (55582) sort,rotate and  fill them(Integer.MAX_VALUE/10*100) " + (System.currentTimeMillis()-unusual)+"ms" );
 
         System.out.println();
         System.out.println("Last Test" );
+
+        List <Integer>numbersOfCrystals= new ArrayList<>();
+        for (int i=0;i< 25_000_000; i++){
+            numbersOfCrystals.add(new Integer(i));
+        }
         long lastTest= System.currentTimeMillis();
-        int bbc= (int)Math.random()*(5985+1)+1;
-        Collections.sort(hpBrandLink);
-        Collections.fill(hpBrandLink,bbc);
-        Collections.shuffle(hpBrandLink);
-        Collections.nCopies(85,hpBrandLink);
-        System.out.println("Do sorting  the 7_000_000  then fill random numbers   then shaffle in the end  do .ncopies , and  latency  is  "+ (System.currentTimeMillis()-lastTest)+"ms" );
+        for (int i=0;i<100;i++) {
+            int bbc = (int) Math.random() * (570 + 1) + 1;
+numbersOfCrystals.add(25_000_000, bbc);
+        }
+        Collections.sort(numbersOfCrystals);
+        Collections.fill(numbersOfCrystals,Integer.MIN_VALUE*100/2);
+        Collections.shuffle(numbersOfCrystals);
+        Collections.nCopies(85,numbersOfCrystals);
+        System.out.println("Create and fill ArrayList by random numbers then sort them,fill,Shuffle and  do n copies latency   "+ (System.currentTimeMillis()-lastTest)+" ms" );
     }
 }
